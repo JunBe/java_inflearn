@@ -8,6 +8,7 @@ public class RefMain2 {
         System.out.println("b = " + b);
 
 //        b.setValue("부산"); //불변객체이므로 값 변경 불가
+        b = new ImmutableAddress("부산");
         System.out.println("부산 -> b");
         System.out.println("a = " + a);
         System.out.println("b = " + b);
