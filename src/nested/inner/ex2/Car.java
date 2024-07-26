@@ -1,4 +1,4 @@
-package nested.nested.inner.ex1;
+package nested.inner.ex2;
 
 public class Car {
     private String model;
@@ -8,19 +8,20 @@ public class Car {
     public Car(String model, int chargeLevel) {
         this.model = model;
         this.chargeLevel = chargeLevel;
-        this.engine = new Engine(this);
+        this.engine = new Engine();
     }
 
-    public int getChargeLevel() {
-        return chargeLevel;
-    }
-
-    public String getModel() {
-        return model;
-    }
 
     public void start() {
         engine.start();
         System.out.println(model + " 시작 완료");
+    }
+
+    private class Engine{
+        public void start() {
+            System.out.println("충전 레벨 확인: " + chargeLevel);
+            System.out.println(model + "의 엔진을 구동합니다.");
+        }
+
     }
 }
